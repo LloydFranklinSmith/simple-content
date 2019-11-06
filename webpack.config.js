@@ -1,4 +1,5 @@
 const path = require("path");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: "./src/simpleContent.ts",
@@ -20,5 +21,6 @@ module.exports = {
     library: "simpleContent",
     libraryTarget: "umd",
     path: path.resolve(__dirname, "dist")
-  }
+  },
+  plugins: [new CopyPlugin([{ from: "testPage.html", to: "testPage.html" }])]
 };
