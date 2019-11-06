@@ -1,7 +1,7 @@
 {
-  "name": "ts-starter",
+  "name": "simple-content",
   "version": "1.0.0",
-  "description": "A starting of point for TS projects.",
+  "description": "",
   "private": true,
   "scripts": {
     "test": "jest",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LloydFranklinSmith/tsstarter"
+    "url": "git+https://github.com/LloydFranklinSmith/simple-content"
   },
   "keywords": [],
   "author": "Lloyd Franklin Smith",
   "license": "unlicense",
   "bugs": {
-    "url": "https://github.com/LloydFranklinSmith/tsstarter/issues"
+    "url": "https://github.com/LloydFranklinSmith/simple-content/issues"
   },
-  "homepage": "https://github.com/LloydFranklinSmith/tsstarter#readme",
+  "homepage": "https://github.com/LloydFranklinSmith/simple-content#readme",
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
