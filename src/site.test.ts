@@ -50,4 +50,36 @@ describe("Site", () => {
 
     expect(site.currentPage).toEqual(3);
   });
+
+  it.each([1, 3, 4, 6])(
+    "should increment the currentPage by one if selectNextPage is called",
+    timesToTurn => {
+      const site = new Site();
+      for (let c = 0; c < 8; c++) {
+        site.addPage(new Page());
+      }
+
+      for (var c = 0; c < timesToTurn; c++) {
+        site.selectNextPage();
+      }
+
+      expect(site.currentPage).toEqual(timesToTurn);
+    }
+  );
+
+  it.each([8, 9, 6])(
+    "should not increment the currentPage if it would reach the length of pages",
+    timesToTurn => {
+      const site = new Site();
+      for (let c = 0; c < 5; c++) {
+        site.addPage(new Page());
+      }
+
+      for (var c = 0; c < timesToTurn; c++) {
+        site.selectNextPage();
+      }
+
+      expect(site.currentPage).toEqual(site.pages.length - 1);
+    }
+  );
 });

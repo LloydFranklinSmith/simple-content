@@ -19,4 +19,10 @@ export default class Site {
   selectPage(pageIndex: number) {
     this._currentPage = pageIndex;
   }
+
+  selectNextPage() {
+    if (this._pages.length - 1 > this._currentPage) {
+      this._currentPage++;
+    }
+  }
 }
