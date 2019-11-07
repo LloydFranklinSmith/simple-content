@@ -33,4 +33,21 @@ describe("Site", () => {
       expect(site.pages[lastPageIndex]).toEqual(lastPage);
     }
   );
+
+  it("should return 0 if no page was set", () => {
+    const site = new Site();
+
+    expect(site.currentPage).toEqual(0);
+  });
+
+  it("should return the index of a page it was set to", () => {
+    const site = new Site();
+    for (let c = 0; c < 5; c++) {
+      site.addPage(new Page());
+    }
+
+    site.selectPage(3);
+
+    expect(site.currentPage).toEqual(3);
+  });
 });
