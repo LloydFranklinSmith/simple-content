@@ -40,6 +40,31 @@ describe("Site", () => {
     expect(site.currentPage).toEqual(0);
   });
 
+  it.each([-2, -3, -4])(
+    "should not allow the current page to be set to  <0",
+    pagetoSelect => {
+      const site = new Site();
+
+      site.selectPage(pagetoSelect);
+
+      expect(site.currentPage).toEqual(0);
+    }
+  );
+
+  it.each([8, 9, 6])(
+    "should set the current page to a length > then the amount of pages",
+    pagetoSelect => {
+      const site = new Site();
+      for (let c = 0; c < 5; c++) {
+        site.addPage(new Page());
+      }
+
+      site.selectPage(pagetoSelect);
+
+      expect(site.currentPage).toEqual(0);
+    }
+  );
+
   it("should return the index of a page it was set to", () => {
     const site = new Site();
     for (let c = 0; c < 5; c++) {
