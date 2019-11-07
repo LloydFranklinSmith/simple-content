@@ -82,4 +82,38 @@ describe("Site", () => {
       expect(site.currentPage).toEqual(site.pages.length - 1);
     }
   );
+
+  it.each([1, 3, 4, 6])(
+    "should decrement the currentPage by one if selectPreviousPage is called",
+    timesToTurn => {
+      const site = new Site();
+      for (let c = 0; c < 8; c++) {
+        site.addPage(new Page());
+      }
+      site.selectPage(7);
+
+      for (var c = 0; c < timesToTurn; c++) {
+        site.selectPreviousPage();
+      }
+
+      expect(site.currentPage).toEqual(7 - timesToTurn);
+    }
+  );
+
+  it.each([10, 9, 16, 6])(
+    "should not  decrement the currentPage below 0 by one if selectPreviousPage is called",
+    timesToTurn => {
+      const site = new Site();
+      for (let c = 0; c < 8; c++) {
+        site.addPage(new Page());
+      }
+      site.selectPage(7);
+
+      for (var c = 0; c < timesToTurn; c++) {
+        site.selectPreviousPage();
+      }
+
+      expect(site.currentPage).toBeGreaterThanOrEqual(0);
+    }
+  );
 });

@@ -25,4 +25,10 @@ export default class Site {
       this._currentPage++;
     }
   }
+
+  selectPreviousPage() {
+    if (this.currentPage > 0) {
+      this._currentPage--;
+    }
+  }
 }
