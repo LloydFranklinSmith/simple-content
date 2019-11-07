@@ -1,12 +1,12 @@
 export default class Page {
-  _title = "";
-  _content = "";
+  private _title = "";
+  private _content = "";
   get title() {
     return this._title;
   }
 
   set title(value: string) {
-    this.title = value;
+    this._title = value;
   }
 
   set content(value) {

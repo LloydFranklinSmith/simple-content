@@ -27,6 +27,6 @@ describe("Page", () => {
 
     page.content = "some content";
 
-    expect(page.title).toEqual("some content");
+    expect(page.content).toEqual("some content");
   });
 });
