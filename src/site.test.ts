@@ -17,4 +17,20 @@ describe("Site", () => {
 
     expect(site.pages).toContain(mockPage);
   });
+
+  it.each([1, 3, 5, 6])(
+    "should return the index of a added page",
+    (pagesToCreate: Number) => {
+      const site = new Site();
+      let lastPage: Page;
+      let lastPageIndex: number;
+      for (let c = 0; c < pagesToCreate; c++) {
+        lastPage = new Page();
+        lastPage.content = c.toString();
+        lastPageIndex = site.addPage(lastPage);
+      }
+
+      expect(site.pages[lastPageIndex]).toEqual(lastPage);
+    }
+  );
 });

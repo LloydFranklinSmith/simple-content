@@ -3,10 +3,10 @@ import Page from "./page";
 export default class Site {
   private _pages: Array<Page> = [];
   get pages(): Array<Page> {
-    return [];
+    return this._pages;
   }
 
   addPage(page: Page) {
-    this._pages.push(page);
+    return this._pages.push(page) - 1;
   }
 }
