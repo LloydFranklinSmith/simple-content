@@ -1,3 +1,3 @@
-import DeepThought from "./deepThought";
+import site from "./site";
 
-export { DeepThought };
+export { site };
